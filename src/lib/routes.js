@@ -1,3 +1,5 @@
+// 서버 사이드(api)에서 실행
+
 export function setRoutes(app, Model, pagingOptions = undefined) {
   app.get(async (req, res) => {
     try {
