@@ -1,22 +1,25 @@
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 import { configureStore } from '@reduxjs/toolkit';
-import persistor, { rootReducer } from './reducer';
+import user from './user';
+import todo from './todo';
+import blog from './blog';
+
+const reducer = {
+  user,
+  todo,
+  blog,
+};
 
 const store = configureStore({
-  rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }),
+  reducer: user,
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware({
+  //     serializableCheck: false,
+  //   }),
 });
 
 export const StoreProvider = ({ children }) => (
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      {children}
-    </PersistGate>
-  </Provider>
+  <Provider store={store}>{children}</Provider>
 );
 
 export default store;

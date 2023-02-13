@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import createRestThunk from '../api/rest';
+import createRestThunk from '../lib/rest';
 import { buildExtraReducers, createThunk } from './util';
 
 const name = 'todo';

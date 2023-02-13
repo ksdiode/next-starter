@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api from '../api';
 
 export async function asyncTimeout(delay) {
   return new Promise((resolve, reject) => {
