@@ -1,9 +1,13 @@
+'use client';
+
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import MainFeaturedPost from '@/components/MainFeaturedPost';
+import { Container, CssBaseline } from '@mui/material';
 import './globals.css';
 import Provider from './provider';
 
-import { sections } from './testData';
+import { sections, mainFeaturedPost } from './testData';
 
 export default function RootLayout({ children }) {
   return (
@@ -15,12 +19,13 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <Provider>
-          <Header title="Blog" sections={sections} />
-          {children}
-          <Footer
-            title="Footer"
-            description="Something here to give the footer a purpose!"
-          />
+          <CssBaseline />
+          <Container maxWidth="lg">
+            <Header title="Blog" sections={sections} />
+            <MainFeaturedPost post={mainFeaturedPost} />
+            {children}
+          </Container>
+          <Footer title="Footer" description="Something here to give the footer a purpose!" />
         </Provider>
       </body>
     </html>

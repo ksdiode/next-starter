@@ -15,14 +15,7 @@ function Header(props) {
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Button>구독</Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1 }}
-        >
+        <Typography component="h2" variant="h5" color="inherit" align="center" noWrap sx={{ flex: 1 }}>
           {title}
         </Typography>
         <IconButton>
@@ -32,20 +25,9 @@ function Header(props) {
           회원가입
         </Button>
       </Toolbar>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        sx={{ justifyContent: 'flex-start', overflowX: 'auto' }}
-      >
+      <Toolbar component="nav" variant="dense" sx={{ justifyContent: 'flex-start', overflowX: 'auto' }}>
         {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
-          >
+          <Link color="inherit" noWrap key={section.title} variant="body2" href={section.url} sx={{ p: 1, flexShrink: 0 }}>
             {section.title}
           </Link>
         ))}
